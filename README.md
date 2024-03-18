@@ -1,4 +1,6 @@
-# DailyHire_repo
+# DailyHire
+
+DialyHire is a job hosting and finding web app for part-time / daily wage jobs.
 
 To run the app, run 'npm start'.
 
