@@ -4,13 +4,28 @@
       "title": "sample job 1",
       "body": "Sample job 1 description",
       "author": "author1",
-      "id": "1"
+      "location": "location1",
+      "seats": 10,
+      "id": "1",
+      "applied": true
     },
     {
       "title": "sample job 2",
       "body": "Sample job 2 description",
       "author": "author2",
-      "id": "2"
+      "location": "location2",
+      "seats": "5",
+      "id": "2",
+      "applied": false
+    },
+    {
+      "id": "cd2e",
+      "title": "ndaskjbnd",
+      "body": "sgsgs",
+      "author": " sgsg",
+      "location": " wgrweg",
+      "seats": "3",
+      "applied": false
     }
   ],
   "user_data": [
@@ -19,18 +34,6 @@
       "email": "admin@xyz.com",
       "password": "admin",
       "id": "7940"
-    },
-    {
-      "id": "4095",
-      "username": "asdf",
-      "email": "qwert@asd.com",
-      "password": "12345"
-    },
-    {
-      "id": "5296",
-      "username": "Joseph",
-      "email": "asdf@gmail.com",
-      "password": "123455"
     }
   ]
 }

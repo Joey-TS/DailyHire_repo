@@ -6,13 +6,15 @@ const Create = () => {
 const [title, setTitle] = useState('');
 const [body, setBody] = useState('');
 const [author, setAuthor] = useState(' ');
+const [location, setLocation] = useState(' ');
+const [seats, setSeats] = useState(' ');
 const [isPending, setIsPending] = useState(false); /*Used for indicating loading */
 const history = useHistory();                      /*Used for redirecting to a different page */
 
 
 const handleSubmit = (e) => {
     e.preventDefault();                         /*Prevents the submit button from refreshing the site on being pressed */
-    const job = { title, body, author };        /*Generates an object consisting of values obtained from form */
+    const job = { title, body, author, location,seats,applied:false };        /*Generates an object consisting of values obtained from form */
     setIsPending(true);                         
     /*The second arguement of fetch is where data is tackled and
     fetch method is defined*/
@@ -51,6 +53,20 @@ const handleSubmit = (e) => {
                     required
                     value={author}
                     onChange={(e) => setAuthor(e.target.value)}
+                />
+                <label>Location of job</label>
+                <input
+                    type='text'
+                    required
+                    value={location}
+                    onChange={(e) => setLocation(e.target.value)}
+                />
+                <label>Number of seats</label>
+                <input
+                    type='number' min='1'
+                    required
+                    value={seats}
+                    onChange={(e) => setSeats(e.target.value)}
                 />
                 {!isPending && <button>Add job</button>}
                 {isPending && <button disabled>Adding job...</button>}  {/*Disables the button when the job is being added */}
