@@ -9,7 +9,7 @@ const JobList = ({ jobs, title }) => {
           <Link to={`/jobs/${job.id}`}>
             <h2>{job.title}</h2>
             <p>
-              <posted>Posted by : {job.author}</posted>{" "}
+              <posted>Posted by : {job.author}</posted>{" "} 
               <location>Location: {job.location}</location>{" "}
               <seats>seats: {job.seats}</seats>
             </p>

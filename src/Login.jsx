@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom';
 import email_icon from "./assests/email_icon.png";
 import password_icon from "./assests/password_icon.png";
 
-const Signup = () => {
+const Login = () => {
 
 const [email, setEmail] = useState('');
 const [password, setpassword] = useState('');
@@ -11,7 +11,7 @@ const history = useHistory();     /*Used for redirecting to a different page */
 const [isPending, setIsPending] = useState(false); /*Used for indicating loading */
 
 const handleSignUp = () => {
-  history.push('/login')
+  history.push('/')
 }
 
 
@@ -71,4 +71,4 @@ const handleSubmit = (e) =>
  );
 };
 
-export default Signup;
+export default Login;
