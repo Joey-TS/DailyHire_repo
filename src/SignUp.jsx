@@ -15,9 +15,10 @@ const [usertype, setUserType] = useState('');
 const history = useHistory();     /*Used for redirecting to a different page */
 const [isPending, setIsPending] = useState(false); /*Used for indicating loading */
 
-const signIn= async () => {
+const signIn= async (e) => {
   try{  
     await createUserWithEmailAndPassword(auth, email, password)
+    history.push('/Home')
   } catch (error) {
     console.log(error)
   }
