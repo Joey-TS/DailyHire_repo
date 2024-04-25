@@ -6,6 +6,8 @@ import JobDetails from './jobdetails';
 import NotFound from './notFound';
 import Login from './Login';
 import Signup from './SignUp';
+import Home2 from './Home2';
+import LandingPage from './LandingPage';
 
 function App() {
   return (
@@ -15,6 +17,9 @@ function App() {
       <div className='content'>
         <Switch>
           <Route exact path='/'>
+            <LandingPage />
+          </Route>
+          <Route exact path='/SignUp'>
             <Signup />
           </Route>
           <Route exact path='/Login'>

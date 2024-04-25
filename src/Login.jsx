@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { useHistory } from 'react-router-dom';
 import email_icon from "./assests/email_icon.png";
 import password_icon from "./assests/password_icon.png";
+import {auth} from './FB-config/firebase-config';
+import { signInWithEmailAndPassword } from "firebase/auth";
 
 const Login = () => {
 
@@ -11,9 +13,17 @@ const history = useHistory();     /*Used for redirecting to a different page */
 const [isPending, setIsPending] = useState(false); /*Used for indicating loading */
 
 const handleSignUp = () => {
-  history.push('/')
+  history.push('/SignUp')
 }
 
+const StartLogin = async (e) => {
+  try{
+    await signInWithEmailAndPassword(auth, email, password)
+    history.push('/Home')
+  } catch (error) {
+    console.log(error)
+  }
+};
 
 const handleSubmit = (e) => 
 {
@@ -59,7 +69,7 @@ const handleSubmit = (e) =>
               </div>
 
               <div className="submit-container">
-              {!isPending && <button>Log In</button>}
+              {!isPending && <button onClick={StartLogin}>Log In</button>}
               {isPending && <button disabled>Logging in...</button>}  {/*Disables the button when the job is being added */}
               
 

@@ -31,7 +31,8 @@ const NavBar = () => {
     const logOut = async () => {
         try {  
           await signOut(auth); 
-          history.push('/'); // Redirect to the login page after sign out
+          history.push('/SignUp'); // Redirect to the login page after sign out
+          setEmail(null);
         } catch (error) {
           console.log(error);
         }
@@ -39,6 +40,7 @@ const NavBar = () => {
     
     return ( 
         <nav className="navbar">
+            {console.log(email)}
             <h1>
                 {email ? (
                     <Link to="Home/">DailyHire</Link>

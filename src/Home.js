@@ -5,6 +5,7 @@ import { auth } from './FB-config/firebase-config';
 
 const Home = () => {
   const [email, setEmail] = useState(null);
+  const [jobsLoaded, setJobsLoaded] = useState(false); // Track whether jobs data is loaded
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged(user => {
@@ -23,12 +24,19 @@ const Home = () => {
 
   const { data: jobs, isLoading, error } = useFetch('http://localhost:8000/jobs');
 
+  useEffect(() => {
+    if (jobs) {
+      setJobsLoaded(true);
+    }
+  }, [jobs]);
+
   return (
     <div className="home">
       Welcome {email || 'Guest'}!
       <h2>All Jobs</h2>
       {error && <div>{error}</div>}
-      {isLoading && <div>Loading...</div>}
+      {/* Display loading indicator until jobs data is loaded */}
+      {!jobsLoaded && <div>Loading...</div>}
       {jobs && <JobList jobs={jobs}/>}
     </div>
   );
