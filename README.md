@@ -9,4 +9,4 @@ Team members:
 <br>
 To run the app, run 'npm start'.
 <br>
-To run the JSON file (used as pseudo database) run npx json-server --watch data/db.json --port 8000
+To run the JSON file (used as pseudo database) run npx json-server --watch data/db.json --port 8000 (Please note, this command must also be run in a seperate terminal)
